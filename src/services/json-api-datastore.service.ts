@@ -109,10 +109,10 @@ export class JsonApiDatastore {
         let typeStore = this._store[type];
         return typeStore ? Object.keys(typeStore).map(key => <T>typeStore[key]) : [];
     }
-	
-	clear()	{
-		this._store = {};
-	}
+
+    clear()	{
+        this._store = {};
+    }
 
     set headers(headers: Headers) {
         this._headers = headers;
