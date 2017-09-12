@@ -112,7 +112,7 @@ export class JsonApiModel {
       let relationshipData: any = find(included, {id: item.id, type: typeName});
       if (relationshipData) {
         let newObject: T = this.createOrPeek(modelType, relationshipData);
-        if (level <= 1) {
+        if (level <= 5) {
           newObject.syncRelationships(relationshipData, included, level + 1);
         }
         relationshipList.push(newObject);
@@ -127,7 +127,7 @@ export class JsonApiModel {
     let relationshipData: any = find(included, {id: id, type: typeName});
     if (relationshipData) {
       let newObject: T = this.createOrPeek(modelType, relationshipData);
-      if (level <= 1) {
+      if (level <= 5) {
         newObject.syncRelationships(relationshipData, included, level + 1);
       }
       return newObject;
